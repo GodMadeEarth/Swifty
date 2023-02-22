@@ -1,0 +1,28 @@
+// Populated Settlement - Assignment 2 Part 1
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 31 2023
+
+var populationSize : Int
+var setlmentId : Int
+var setlments = ["hamlet","village","town",
+                 "small town","large city","metropolis"]
+
+populationSize = Int.random(in: 40...4000000)
+
+switch populationSize {
+  case let popSize where popSize < 100: setlmentId = 0
+  case let popSize where popSize < 1000: setlmentId = 1
+  case let popSize where popSize < 10000: setlmentId = 2
+  case let popSize where popSize < 30000: setlmentId = 3
+  case let popSize where popSize < 100000: setlmentId = 4
+  default: setlmentId = 5
+}
+
+print("""
+      This program called the 'Populated Settlement' 
+      will return a setlment's type and population size. \n
+      """)
+
+print("A \(setlments[setlmentId]) has a population size of \(populationSize) people")
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()

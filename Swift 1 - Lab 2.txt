@@ -1,0 +1,91 @@
+// Any Card - Lab 2 Part 1
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 25 2023
+
+let DIGIT_NAMES = 
+  [
+  "Zero","One","Two","Three", "Four",
+  "Five","Six","Seven","Eight","Nine",
+  "Ten"
+  ]
+
+let CARD_SUITE : Int = Int.random(in: 1...4)
+let CARD_VALUE : Int = Int.random(in: 1...13)
+
+var suiteName : String
+var cardName : String
+
+if CARD_SUITE == 1 {suiteName = "Hearts"}
+else if CARD_SUITE == 2 {suiteName = "Diamonds"}
+else if CARD_SUITE == 3 {suiteName = "Spades"}
+else if CARD_SUITE == 4 {suiteName = "Clubs"}
+
+if CARD_VALUE == 1 {cardName = "Ace"}
+else if CARD_VALUE == 2 {cardName = "Jack"}
+else if CARD_VALUE == 3 {cardName = "Queen"}
+else if CARD_VALUE == 4 {cardName = "King"}
+else {cardName = DIGIT_NAMES[CARD_VALUE]}
+
+print("""
+      This program called the 'Any Card' 
+      will return a card's value and suite. \n
+      """)
+
+print("\(cardName) of \(suiteName)")
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()
+
+
+
+
+// Any Card - Lab 2 Part 2
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 25 2023
+
+let DIGIT_NAMES = 
+  [
+  "Zero","One","Two","Three", "Four",
+  "Five","Six","Seven","Eight","Nine",
+  "Ten"
+  ]
+
+let CARD_SUITE : Int = Int.random(in: 1...4)
+let CARD_VALUE : Int = Int.random(in: 1...13)
+
+var suiteName : String
+var cardName : String
+
+switch(CARD_SUITE)
+{
+  case 1:
+    suiteName = "Hearts"
+  case 2:
+    suiteName = "Diamonds"
+  case 3:
+    suiteName = "Clubs"
+  default:
+    suiteName = "Spades"
+}
+
+switch(CARD_VALUE)
+{
+  case 1:
+    cardName = "Ace"
+  case 11:
+    cardName = "Jack"
+  case 12:
+    cardName = "Queen"
+  case 13:
+    cardName = "King"
+  case let cardValue:
+  cardName = DIGIT_NAMES[cardValue]
+}
+
+print("""
+      This program called the 'Any Card' 
+      will return a card's value and suite. \n
+      """)
+
+print("\(cardName) of \(suiteName)")
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()

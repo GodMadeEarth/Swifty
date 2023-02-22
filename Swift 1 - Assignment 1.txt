@@ -1,0 +1,55 @@
+// Student Splitter
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 18 2023
+
+let MAX_STUDENTS : Int = 30
+let MIN_STUDENTS : Int = 25
+
+var total_students : Int
+var studentsOver25 : Int
+var studentsUnder25 : Int
+
+totalStudents = Int.random(in:MIN_STUDENTS...MAX_STUDENTS)
+
+studentsOver25 = Int.random(in:0...total_students)
+
+studentsUnder25 = total_students - studentsOver25
+  
+
+print("""
+      This program called the 'Student Splitter' will
+      return the total amount of students along with 
+      the percentage over and under 25 years of age. \n
+      """)
+
+print("Total Students:" ,total_students)
+print("Students over 25:" ,"\(Float(studentsOver25)/Float(total_students)*100.0)%")
+print("Students under 25:" ,"\(Float(studentsUnder25)/Float(total_students)*100.0)%")
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()
+
+
+
+// Debt For Months
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 18 2023
+
+let MONTHS_IN_YEAR : Int = 12
+
+var totalMonthsLeft : Int
+var yearsLeft : Int
+var monthsLeft : Int
+
+totalMonthsLeft = Int.random(in:1...100)
+yearsLeft = totalMonthsLeft / MONTHS_IN_YEAR
+monthsLeft = totalMonthsLeft - yearsLeft * MONTHS_IN_YEAR
+
+print("""
+      This program called the 'Debt For Months' will
+      return the total amount of years and months left to pay the loan. \n
+      """)
+
+print("The loan is due to be repaid in \(yearsLeft) years and \(monthsLeft) months")
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()
+

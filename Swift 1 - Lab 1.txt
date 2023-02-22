@@ -1,0 +1,50 @@
+// Shortest Runway Predictor
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 11 2023
+
+import Foundation
+
+var planeLiftOffSpeed : Double
+var planeAcceleration : Double
+var minimumRunwayLength : Double
+
+planeLiftOffSpeed = Double.random(in: 150...200)
+planeAcceleration = Double.random(in: 4...8)
+
+minimumRunwayLength = Foundation.sqrt(planeLiftOffSpeed) / planeAcceleration
+
+print("This program called the 'Shortest Runway Predicor' will return minimum runway length of the curently generated airplane.\n")
+
+print("Plane Liftoff Speed:" ,planeLiftOffSpeed)
+print("Plane Acceleration:" ,planeAcceleration)
+print("Minimum Runway Length:" ,minimumRunwayLength)
+
+print("\n Thankyou for your time!") ; readLine()
+
+
+
+// Minutes Days Years
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 11 2023
+
+let MINUTES_IN_HOUR : Int = 60
+let HOURS_IN_DAY : Int = 24
+let DAYS_IN_YEAR : Int = 365
+let MINUTES_IN_YEAR : Int = DAYS_IN_YEAR * HOURS_IN_DAY * MINUTES_IN_HOUR
+
+var totalMinutes : Int = Int.random(in:1000000...5000000)
+var remandingMinutes : Int
+var totalYears : Int
+var extraDays : Double
+
+totalYears = totalMinutes / MINUTES_IN_YEAR
+remandingMinutes = totalMinutes % MINUTES_IN_YEAR
+extraDays = Double(remandingMinutes) / Double(MINUTES_IN_HOUR) / Double(HOURS_IN_DAY)
+
+print("This program called the 'Minute, Day, Year', will return how many years and days an amount of minutes make up.\n")
+
+print("Total Minutes:" ,totalMinutes)
+print("Total Years:" ,totalYears)
+print("Extra Days:" ,extraDays)
+
+print("\n Thankyou for your time!") ; readLine()

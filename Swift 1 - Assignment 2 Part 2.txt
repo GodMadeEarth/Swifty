@@ -1,0 +1,54 @@
+// Powerball Lottery - Assignment 2 Part 2
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Jan 31 2023
+
+
+let POWERBALL_NUMBER : Int = Int.random(in: 1...26)
+let PRIZES : [Int] = [4,4,7,7,100,100,50000,1000000,40000000]
+var prizeValue : Int
+
+var ticketMatches : Int = Int.random(in: 0...5)
+var ticketPowerballNumber : Int = Int.random(in: 1...26)
+
+switch ticketMatches
+{
+  case let matches where matches == 0 && ticketPowerballNumber == POWERBALL_NUMBER: 
+    prizeValue = PRIZES[0]
+  case let matches where matches == 1 && ticketPowerballNumber == POWERBALL_NUMBER: 
+    prizeValue = PRIZES[1]
+  case let matches where matches == 2 && ticketPowerballNumber == POWERBALL_NUMBER: 
+    prizeValue = PRIZES[2]
+  case let matches where matches == 3 && ticketPowerballNumber != POWERBALL_NUMBER: 
+    prizeValue = PRIZES[3]
+  case let matches where matches == 3 && ticketPowerballNumber == POWERBALL_NUMBER: 
+    prizeValue = PRIZES[4]
+  case let matches where matches == 4 && ticketPowerballNumber != POWERBALL_NUMBER: 
+    prizeValue = PRIZES[5]
+  case let matches where matches == 4 && ticketPowerballNumber == POWERBALL_NUMBER: 
+    prizeValue = PRIZES[6]
+  case let matches where matches == 5 && ticketPowerballNumber != POWERBALL_NUMBER:
+    prizeValue = PRIZES[7]
+  case let matches where matches == 5 && ticketPowerballNumber == POWERBALL_NUMBER:
+    prizeValue = PRIZES[8]
+  default: 
+    prizeValue = 0
+}
+
+print("""
+      This program called the 'Powerball Lottery' 
+      will return details about your lucky ticket! \n
+      """)
+
+print("Your Ticket has",ticketMatches,"matches with the winning ticket")
+
+if ticketPowerballNumber == POWERBALL_NUMBER
+  {print("and",ticketPowerballNumber,"is the winning powerball number!")}
+else
+  {print("and",ticketPowerballNumber,"is not the winning powerball number.")}
+
+if prizeValue != 0
+{print("The prize awarded is $\(prizeValue).00")}
+else
+  {print("There was no prize money for you ticket")}
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()

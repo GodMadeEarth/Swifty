@@ -1,0 +1,89 @@
+// Populaton Tracker - Lab 3 Part 1
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Feb 7 2023
+
+let beginningPopulation : Int = 350_000_000
+let annualPercentageIncrease : Double = 0.05
+let numberOfYears : Int = 10
+
+var populationIncrease : Int = 0
+var currentPopulation : Int = beginningPopulation
+var year : Int = 1
+
+currentPopulation = beginningPopulation
+year = 1
+
+print("""
+      This program called the 'Populaton Tracker' will 
+      return data about the population growth over time.\n
+      """)
+
+print("While Loop Calculated")
+while year <= numberOfYears 
+{
+  populationIncrease = Int(Double(currentPopulation) * annualPercentageIncrease)
+  currentPopulation += populationIncrease
+
+  print("In Year \(year): The Amount Of Residents Increased By \(populationIncrease) Bringing New Total Of \(currentPopulation) Residents.")
+  year += 1
+}
+
+
+print("\nRepeat While Loop Calculated")
+currentPopulation = beginningPopulation
+year = 1
+repeat
+{
+  populationIncrease = Int(Double(currentPopulation) * annualPercentageIncrease)
+  currentPopulation += populationIncrease
+
+  print("In Year \(year): The Amount Of Residents Increased By \(populationIncrease) Bringing New Total Of \(currentPopulation) Residents.")
+  year += 1
+}while year <= numberOfYears 
+
+
+print("\nFor In Loop Calculated")
+currentPopulation = beginningPopulation
+for _year in 1...numberOfYears
+{
+  populationIncrease = Int(Double(currentPopulation) * annualPercentageIncrease)
+  currentPopulation += populationIncrease
+
+  print("In Year \(_year): The Amount Of Residents Increased By \(populationIncrease) Bringing New Total Of \(currentPopulation) Residents.")
+}
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()
+
+
+
+
+// ProceduralDunker - Lab 3 Part 2
+// Timothy M Campbell - timothy.m.campbell@outlook.com
+// Feb 7 2023
+
+let numberOfGames : Int = 5
+
+var gameNumber : Int = 1
+var playerScore : Int = 0
+var totalScore : Int = 0
+var averageScore : Double = 0.0
+
+print("""
+      This program called the 'Procedural Dunker' will 
+      return details abut the scores a player receives\n
+      """)
+
+for game in 1...numberOfGames 
+{
+  playerScore = Int.random(in: 0...100)
+  totalScore += playerScore
+
+  print("Game \(game): Player Score - \(playerScore)")
+}
+
+averageScore = Double(totalScore) / Double(numberOfGames)
+
+print("Total Score: \(totalScore)")
+print("Average Score: \(averageScore)")
+
+print("\nThankyou for your time!",terminator: "") ; _ = readLine()
